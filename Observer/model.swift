@@ -14,12 +14,12 @@ struct CardTask{
         tasks.append(Card(id: tasks.count, content: task))
     }
     
-    mutating func deleteCard(_ task: Int){
-        tasks.removeAll(where: {$0.id == task})
+    mutating func deleteCard(_ id: Int){
+        tasks.removeAll(where: {$0.id == id}) //search where tasks.id (from model) has the same id as in task (sent from the view)
     }
     
     init(){
-        tasks = Array<Card>()
+        tasks = Array<Card>() //initialize the tasks array
     }
     
     struct Card: Identifiable{

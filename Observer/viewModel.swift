@@ -9,8 +9,9 @@ import SwiftUI
 
 class Communication: ObservableObject{
     
-    @Published private var model: CardTask = CardTask()
+    @Published private var model: CardTask = CardTask() //initialize the model var
     
+    //calls the model useful functions and vars
     var tasks: Array<CardTask.Card>{
         model.tasks
     }

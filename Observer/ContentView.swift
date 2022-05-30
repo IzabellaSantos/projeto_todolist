@@ -11,9 +11,12 @@ struct ContentView: View {
     
     //@ObservedObject tells the view that when the model changes, the view has to rebuild
     @ObservedObject var viewModel: Communication //gets the @Publish var
+    
+    //the @State is used when you modify a var in your view
     @State var textInput: String = ""
     @State var taskIdDelete: Int = 0
     @State var showingAlert = false
+    
     let columns = [
         GridItem(.flexible()) //one column that adapts with the screen size
     ]
@@ -38,13 +41,14 @@ struct ContentView: View {
                 }
             }
             
+            //show an alert asking if the person wants to delete the card
             .alert(isPresented: $showingAlert){
                 Alert(
                     title: Text("Delete task?"),
                     message: Text("This task will be permanently deleted from this list."),
-                    primaryButton: .default(Text("Cancel")),
+                    primaryButton: .default(Text("Cancel")), //if not, close it
                     secondaryButton: .default(Text("Delete")){
-                        viewModel.deleteCard(cardId: taskIdDelete)
+                        viewModel.deleteCard(cardId: taskIdDelete) //if yes, call the function from viewModel to delete it
                     }
                 )
             }
@@ -78,7 +82,7 @@ struct ContentView: View {
     
     var add: some View{
         Button {
-            viewModel.addCard(cardContent: textInput)
+            viewModel.addCard(cardContent: textInput) //calls the function from viewModel to add a card
             textInput = "" //clear the textfield
         } label: {
             VStack{
