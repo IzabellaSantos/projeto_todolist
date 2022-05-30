@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-class Communication: ObservableObject{
-    
-    @Published private var model: CardTask = CardTask() //initialize the model var
+class TasksViewModel: ObservableObject {
+    typealias Task = CardTask.Card
+    @Published private var model = CardTask() //initialize the model var
     
     //calls the model useful functions and vars
-    var tasks: Array<CardTask.Card>{
+    var tasks: Array<Task> {
         model.tasks
     }
     
-    func addCard(cardContent: String){
+    func addCard(cardContent: String) {
         model.addCard(cardContent)
     }
     
-    func deleteCard(cardId: Int){
+    func deleteCard(cardId: Int) {
         model.deleteCard(cardId)
     }
 }

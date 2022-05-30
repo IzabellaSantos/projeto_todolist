@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct ObserverApp: App {
-    let app = Communication()
+    let app = TasksViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: app)
+            ContentView(taskManager: app)
         }
     }
 }
