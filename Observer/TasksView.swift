@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TasksView: View {
     
     //@ObservedObject tells the view that when the model changes, the view has to rebuild
     @ObservedObject var taskManager: TasksViewModel //gets the @Publish var
