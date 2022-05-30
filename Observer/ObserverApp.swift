@@ -12,7 +12,7 @@ struct ObserverApp: App {
     let app = TasksViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView(taskManager: app)
+            TasksView(taskManager: app)
         }
     }
 }

@@ -110,6 +110,6 @@ struct TaskCardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let app = TasksViewModel() //calls the observer class
-        ContentView(taskManager: app)
+        TasksView(taskManager: app)
     }
 }
