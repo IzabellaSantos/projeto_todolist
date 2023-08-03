@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TasksView: View {
     
-    //@ObservedObject tells the view that when the model changes, the view has to rebuild
+    //@ObservedObject tells the view that when the model changes, the view has to rebuild.
     @ObservedObject var taskManager: TasksViewModel //gets the @Publish var
     
     //the @State is used when you modify a var in your view
